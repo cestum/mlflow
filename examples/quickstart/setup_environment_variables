@@ -3,7 +3,7 @@
 ###
 
 # mlflow version to install
-export MLFLOW_VERSION=0.9.1
+export MLFLOW_VERSION=1.2.0
 
 # Directory containing machine learning source code.  Current instructions specify
 # the `examples/quickstart/sample_code`.  The user can specify any valid location containing

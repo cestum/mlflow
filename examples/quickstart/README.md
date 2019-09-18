@@ -38,7 +38,7 @@ Following is an illustrative example.
 ###
 
 # mlflow version to install
-export MLFLOW_VERSION=0.9.1
+export MLFLOW_VERSION=1.2.0
 
 # Directory containing machine learning source code.  Current instructions specify 
 # the `examples/quickstart/sample_code`.  The user can specify any valid location containing 
@@ -68,9 +68,9 @@ environment variables: `. ./setup_environment_variables`.
 
 To confirm correct setting of environment variables, run `env | grep MLFLOW`, your output should be similar to this.
 ```
-MLFLOW_VERSION_TO_INSTALL=mlflow==0.9.1
+MLFLOW_VERSION_TO_INSTALL=mlflow==1.2.0
 MLFLOW_BACKEND_STORE=/tracking
-MLFLOW_VERSION=0.9.1
+MLFLOW_VERSION=1.2.0
 MLFLOW_EXAMPLE_DIRECTORY=/XXXXX/YYYYY/ZZZZZ/mlflow/examples
 MLFLOW_TRACKING_URI=http://mlflow_tracker:5000
 MLFLOW_TRACKING_DIRECTORY=/AAAAA/BBBBB/CCCCC/DDDDD/mlflow_server
