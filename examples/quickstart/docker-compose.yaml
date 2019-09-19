@@ -25,8 +25,8 @@ services:
 # container for Rstudio server
   rstudio:
     build: 
-      context: .
-      dockerfile: mlflow_r/Dockerfile
+      context: ../../
+      dockerfile: examples/quickstart/mlflow_r/Dockerfile
     image: mlflow_rstudio
     ports:
       - "8787:8787"

@@ -1,9 +1,9 @@
 FROM rocker/rstudio-stable:latest
 
-ARG MLFLOW_VERSION
-ARG MLFLOW_VERSION_TO_INSTALL
+#ARG MLFLOW_VERSION
+#ARG MLFLOW_VERSION_TO_INSTALL
 
-RUN echo "\n###\n# BUILDING mlflow_r image with mlflow ${MLFLOW_VERSION}\n###"
+RUN echo "\n###\n# BUILDING mlflow_r image with mlflow\n###"
 
 # install miniconda and prereq libraries
 RUN apt-get update && \
@@ -16,9 +16,14 @@ RUN apt-get update && \
 ENV PATH /opt/conda/bin:$PATH
 
 # install R prereq packages and R mlflow support
-RUN mkdir ~/.R &&\
-    echo 'MAKEFLAGS = -j6' >~/.R/Makevars && \
-    Rscript -e "install.packages(c('mlflow','glmnet','rmarkdown','caTools','bitops'), Ncpus=3)"
+#RUN mkdir ~/.R &&\
+#    echo 'MAKEFLAGS = -j6' >~/.R/Makevars && \
+#    Rscript -e "install.packages(c('glmnet','rmarkdown','caTools','bitops'), Ncpus=3)"
+
+ADD mlflow/R/mlflow /mlflow
+WORKDIR mlflow
+
+RUN Rscript -e "install.packages('devtools'); devtools::install_deps(dep=T)"
 
 # create link to user source code
 RUN cd /home/rstudio && \

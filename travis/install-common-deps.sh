@@ -27,12 +27,12 @@ source activate test-environment
 python --version
 pip install --upgrade pip
 # Install Python test dependencies only if we're running Python tests
-if [[ "$INSTALL_SMALL_PYTHON_DEPS" == "true" ]]; then
-  pip install -r ./travis/small-requirements.txt
-fi
-if [[ "$INSTALL_LARGE_PYTHON_DEPS" == "true" ]]; then
-  pip install -r ./travis/large-requirements.txt
-fi
+#if [[ "$INSTALL_SMALL_PYTHON_DEPS" == "true" ]]; then
+#  pip install -r ./travis/small-requirements.txt
+#fi
+#if [[ "$INSTALL_LARGE_PYTHON_DEPS" == "true" ]]; then
+#  pip install -r ./travis/large-requirements.txt
+#fi
 pip install .
 export MLFLOW_HOME=$(pwd)
 # Remove boto config present in Travis VMs (https://github.com/travis-ci/travis-ci/issues/7940)
